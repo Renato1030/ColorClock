@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by Renato1030 (http://jsbin.com/sunufox/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+  <title>It is the Time</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href='https://fonts.googleapis.com/css?family=Akronim' rel='stylesheet' type='text/css'>
+<style id="jsbin-css">
+*margin { margin: 0; padding: 0; }
+html, body{
+  height: 100%
+}
+#ido{
+  text-align: center;
+  position: relative;
+  top: 50%;
+  font-family: 'Akronim', cursive;
+  font-size: 100px;
+  margin-top: -50px ;
+}
+</style>
+</head>
+<body>
+  <div id="ido" size="16">10:01:00</div>
+<script id="jsbin-javascript">
+function colorClock(){
+// console.log('Hello,' + ' Mindenki - nek');
+// console.log(2+3);
+// console.log(Date());
+var ido = '12:13';
+var masodperc = ':14'; // console.log(ido+masodperc);
+var date = new Date(); // console.log(date);
+var date = new Date();
+  
+var hours = date.getHours(); // console.log(hours);
+       if( hours < 10 ) {
+  hours = '0' + hours;
+}
+
+var minutes = date.getMinutes(); // console.log(minutes);
+      if( minutes < 10 ) {
+  minutes = '0' + minutes;
+}
+
+var seconds = date.getSeconds(); // console.log(seconds);
+      if( seconds < 10 ) {
+  seconds = '0' + seconds;
+}
+
+var clockFace = hours+':'+minutes+':'+seconds;
+var hexColor = '#' + hours + minutes + seconds;
+
+document.getElementById('ido').innerHTML = clockFace;
+document.body.style.background = hexColor;
+
+setTimeout(function() {
+             colorClock();
+           }, 1000);
+}
+colorClock();
+</script>
+</body>
+</html>
